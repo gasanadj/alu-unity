@@ -11,15 +11,19 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 7f;
     public bool isGrounded;
     private Rigidbody rb;
+    public Vector3 startPosition;
+    public float minHeight = -10f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
         MovePlayer();
+        isFalling();
     }
 
     void MovePlayer()
@@ -55,4 +59,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void isFalling()
+    {
+        if (transform.position.y < minHeight)
+        {
+            transform.position = startPosition + new Vector3(0, 10f, 0);
+            rb.velocity = Vector3.zero;
+        }
+    }
 }
