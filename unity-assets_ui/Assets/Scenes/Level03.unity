@@ -9310,6 +9310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5501564622606497152, guid: 06cbbcd42670e4712b1187dfdcd13384, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f413ccfa475ba436fa567bbabec7d4d1, type: 3}
     - target: {fileID: 6016756327580359942, guid: 06cbbcd42670e4712b1187dfdcd13384, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -40
