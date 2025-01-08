@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
     public Vector3 offset;    
     public float sensitivity = 3.0f;  
     public bool allowFreeLook = true; 
-    public bool invertY = false;      
+    public bool isInverted = true;      
 
     private float yaw = 0.0f; 
     private float pitch = 0.0f; 
@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
 
         yaw += mouseX;
-        pitch -= invertY ? -mouseY : mouseY;
+        pitch -= isInverted ? -mouseY : mouseY;
 
         pitch = Mathf.Clamp(pitch, -30f, 60f);
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
