@@ -5,8 +5,8 @@ public class CameraController : MonoBehaviour
     public Transform player;  
     public Vector3 offset;    
     public float sensitivity = 3.0f;  
-    public bool allowFreeLook = true; 
-    public bool isInverted = true;      
+    public bool allowFreeLook = true;
+    public bool isInverted;
 
     private float yaw = 0.0f; 
     private float pitch = 0.0f; 
@@ -14,6 +14,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         offset = transform.position - player.position;
+        isInverted = PlayerPrefs.GetInt("InvertY", 0) == 1;
     }
 
     void LateUpdate()
