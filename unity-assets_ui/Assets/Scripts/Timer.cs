@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public Text TimerText;
+    public Text FinalTime;
     private float elapsedTime = 0f;
     private bool isPlaying = false;
     // Update is called once per frame
@@ -28,6 +29,7 @@ public class Timer : MonoBehaviour
         isPlaying = false;
         TimerText.color = Color.green;
         TimerText.fontSize = 60;
+        Win();
     }
 
     void SetUI(float time)
@@ -37,5 +39,10 @@ public class Timer : MonoBehaviour
         int milliseconds = Mathf.FloorToInt((time * 100F) % 100F);
 
         TimerText.text = string.Format("{0:0}:{1:00}.{2:00}", minutes, seconds, milliseconds);
+    }
+
+    public void Win()
+    {
+        FinalTime.text = TimerText.text;
     }
 }

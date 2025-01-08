@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
         {
             case 1:
                 SceneManager.LoadScene("Level01");
+                Debug.Log("Scene One Loaded");
                 break;
             case 2:
                 SceneManager.LoadScene("Level02");
