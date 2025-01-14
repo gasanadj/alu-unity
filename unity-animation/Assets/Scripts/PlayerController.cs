@@ -68,6 +68,7 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
             animator.SetBool("Jump", false);
             animator.SetBool("isFalling", false);
+            animator.SetBool("touchGround", true);
             //animator.Play("Happy Idle");
         }
     }
@@ -80,6 +81,7 @@ public class PlayerController : MonoBehaviour
             if (rb.velocity.y < 0)
             {
                 animator.SetBool("isFalling", true);
+                animator.SetBool("touchGround", false);
             }
         }
     }
