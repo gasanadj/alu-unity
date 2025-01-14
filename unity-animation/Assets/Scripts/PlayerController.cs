@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     public Vector3 startPosition;
     public float minHeight = -10f;
+    public float rotationSpeed = 10f;
     private Animator animator;
     private void Awake()
     {
@@ -35,15 +36,18 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
         verticalInput = Input.GetAxis("Vertical") * Time.deltaTime * speed;
-        if (horizontalInput !=0 || verticalInput != 0)
+        Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
+        if (movement != Vector3.zero)
         {
+            Quaternion target = Quaternion.LookRotation(movement);
+            transform.rotation = Quaternion.Slerp(transform.rotation, target, rotationSpeed * Time.deltaTime);
             animator.SetBool("Run", true);
         } else
         {
             animator.SetBool("Run", false);
         }
 
-        transform.Translate(verticalInput, 0, -horizontalInput);
+        transform.Translate(verticalInput, 0, -horizontalInput, Space.World);
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
