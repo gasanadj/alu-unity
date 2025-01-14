@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
         verticalInput = Input.GetAxis("Vertical") * Time.deltaTime * speed;
         Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
-        if (movement != Vector3.zero)
+        if (movement != Vector3.zero && isGrounded && !animator.GetBool("Jump"))
         {
             Quaternion target = Quaternion.LookRotation(movement);
             transform.rotation = Quaternion.Slerp(transform.rotation, target, rotationSpeed * Time.deltaTime);
@@ -58,6 +58,7 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        animator.SetBool("Jump", true);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -65,6 +66,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            animator.SetBool("Jump", false);
         }
     }
 
