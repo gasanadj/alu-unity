@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     public Vector3 startPosition;
     public float minHeight = -10f;
+    private Animator animator;
+    private void Awake()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -30,6 +35,14 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
         verticalInput = Input.GetAxis("Vertical") * Time.deltaTime * speed;
+        if (horizontalInput !=0 || verticalInput != 0)
+        {
+            animator.SetBool("Run", true);
+        } else
+        {
+            animator.SetBool("Run", false);
+        }
+
         transform.Translate(verticalInput, 0, -horizontalInput);
 
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
