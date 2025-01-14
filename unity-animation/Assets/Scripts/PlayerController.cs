@@ -67,6 +67,8 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
             animator.SetBool("Jump", false);
+            animator.SetBool("isFalling", false);
+            animator.Play("Happy Idle");
         }
     }
 
@@ -75,6 +77,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
+            if (rb.velocity.y < 0)
+            {
+                animator.SetBool("isFalling", true);
+            }
         }
     }
 
@@ -82,6 +88,7 @@ public class PlayerController : MonoBehaviour
     {
         if (transform.position.y < minHeight)
         {
+            animator.SetBool("isFalling", true);
             transform.position = startPosition + new Vector3(0, 10f, 0);
             rb.velocity = Vector3.zero;
         }
