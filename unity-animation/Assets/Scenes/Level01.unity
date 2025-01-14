@@ -2240,6 +2240,7 @@ GameObject:
   - component: {fileID: 640775075}
   - component: {fileID: 640775074}
   - component: {fileID: 640775077}
+  - component: {fileID: 640775078}
   m_Layer: 0
   m_Name: CutsceneCamera
   m_TagString: Untagged
@@ -2342,6 +2343,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &640775078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640775073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38219eb6b75b8454ab13b2802a6edbf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 543534208}
+  timerCanvas: {fileID: 1359571123}
+  Player: {fileID: 1022332601}
+  cutsceneCamera: {fileID: 640775073}
 --- !u!1001 &667406423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4570,7 +4587,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022332601}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a4993f729aba440a8e6519285fa8d11, type: 3}
   m_Name: 
@@ -5723,6 +5740,11 @@ Transform:
   - {fileID: 899076424}
   m_Father: {fileID: 1518027259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1359571123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3482325011067525731, guid: 06cbbcd42670e4712b1187dfdcd13384, type: 3}
+  m_PrefabInstance: {fileID: 2530931690828634624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1426492207
 GameObject:
   m_ObjectHideFlags: 0
@@ -9573,6 +9595,10 @@ PrefabInstance:
     - target: {fileID: 3482325011067525731, guid: 06cbbcd42670e4712b1187dfdcd13384, type: 3}
       propertyPath: m_Name
       value: TimerCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3482325011067525731, guid: 06cbbcd42670e4712b1187dfdcd13384, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5501564622606497152, guid: 06cbbcd42670e4712b1187dfdcd13384, type: 3}
       propertyPath: m_FontData.m_Font
