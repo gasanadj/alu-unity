@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
             isGrounded = true;
             animator.SetBool("Jump", false);
             animator.SetBool("isFalling", false);
-            animator.Play("Happy Idle");
+            //animator.Play("Happy Idle");
         }
     }
 
