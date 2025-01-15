@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public float minHeight = -10f;
     public float rotationSpeed = 10f;
     private Animator animator;
+    private bool isRunningSoundPlaying = false;
+    private bool hasLandedInitially = false;
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -42,9 +44,20 @@ public class PlayerController : MonoBehaviour
             Quaternion target = Quaternion.LookRotation(movement);
             transform.rotation = Quaternion.Slerp(transform.rotation, target, rotationSpeed * Time.deltaTime);
             animator.SetBool("Run", true);
+
+            if (!isRunningSoundPlaying)
+            {
+                FindObjectOfType<AudioManager>().Play("PlayerRun");
+                isRunningSoundPlaying = true;
+            }
+
         } else
         {
             animator.SetBool("Run", false);
+            if (isRunningSoundPlaying)
+            {
+                isRunningSoundPlaying = false;
+            }
         }
 
         transform.Translate(verticalInput, 0, -horizontalInput, Space.World);
@@ -69,6 +82,11 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Jump", false);
             animator.SetBool("isFalling", false);
             animator.SetBool("touchGround", true);
+            if (!hasLandedInitially)
+            {
+                FindObjectOfType<AudioManager>().Play("PlayerLand");
+                hasLandedInitially = true;
+            }
             //animator.Play("Happy Idle");
         }
     }
@@ -90,6 +108,7 @@ public class PlayerController : MonoBehaviour
     {
         if (transform.position.y < minHeight)
         {
+            hasLandedInitially = false;
             animator.SetBool("isFalling", true);
             transform.position = startPosition + new Vector3(0, 10f, 0);
             rb.velocity = Vector3.zero;
