@@ -2,6 +2,7 @@ using UnityEngine.Audio;
 using UnityEngine;
 using System;
 
+
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
@@ -34,10 +35,12 @@ public class AudioManager : MonoBehaviour
         
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void Play (string name)

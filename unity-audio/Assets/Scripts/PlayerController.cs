@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 10f;
     private Animator animator;
     private bool isRunningSoundPlaying = false;
-    private bool hasLandedInitially = false;
+    private bool hasLandedInitially = true;
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
@@ -114,4 +115,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
     }
+
+
+
 }
