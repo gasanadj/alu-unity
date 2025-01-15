@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f2ab928dee914e5ba4188f06a381ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winScreen: {fileID: 0}
+  winScreen: {fileID: 1580079286}
   timer: {fileID: 1022332608}
 --- !u!4 &255210704 stripped
 Transform:
@@ -6714,6 +6714,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bc5dd21d8d0f4f3e861af55dcd342af, type: 3}
+--- !u!1 &1580079286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 419289817509228211, guid: 0bc5dd21d8d0f4f3e861af55dcd342af, type: 3}
+  m_PrefabInstance: {fileID: 1580079285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1582885970
 PrefabInstance:
   m_ObjectHideFlags: 0
