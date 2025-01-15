@@ -18,7 +18,7 @@ public class CutsceneController : MonoBehaviour
     void Update()
     {
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        if (stateInfo.IsName("Intro01") && stateInfo.normalizedTime >= 1.0f)
+        if ((stateInfo.IsName("Intro01") || stateInfo.IsName("Intro02")) && stateInfo.normalizedTime >= 1.0f)
         {
             Debug.Log("Animation has finished Playing");
             timerCanvas.SetActive(true);
