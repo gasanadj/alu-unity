@@ -1230,7 +1230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winScreen: {fileID: 1580079286}
   timer: {fileID: 1022332608}
-  source: {fileID: 0}
+  source: {fileID: 237148391}
 --- !u!4 &255210704 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4fe2c9fb1cf8047ac8bd6ab24410317d, type: 3}
@@ -3776,6 +3776,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 2147158536}
+  audioMixer: {fileID: 24100000, guid: 41ea7a18916464824abc5af4e5fd74ff, type: 2}
+  normalSnapshot: Normal
+  muffledSnapshot: Muffled
+  transitionTime: 0.5
 --- !u!1001 &899076423
 PrefabInstance:
   m_ObjectHideFlags: 0

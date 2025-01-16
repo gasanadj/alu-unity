@@ -4035,6 +4035,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseCanvas: {fileID: 1048304984}
+  audioMixer: {fileID: 24100000, guid: 41ea7a18916464824abc5af4e5fd74ff, type: 2}
+  normalSnapshot: Normal
+  muffledSnapshot: Muffled
+  transitionTime: 0.5
 --- !u!1001 &899076423
 PrefabInstance:
   m_ObjectHideFlags: 0

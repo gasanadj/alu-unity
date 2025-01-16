@@ -143,6 +143,7 @@ AudioMixerController:
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
+  - {fileID: 8326494413014344116}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -162,7 +163,7 @@ AudioMixerController:
     - a27b6822de2074e5891b16d547bee9af
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: 24500006}
+  m_TargetSnapshot: {fileID: 8326494413014344116}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -207,7 +208,7 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Snapshot
+  m_Name: Normal
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: ecccb7b8795af45e6a743b5897349358
   m_FloatValues:
@@ -250,3 +251,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &8326494413014344116
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Muffled
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: e9479d37ef1f64c0abe5c35a674e4429
+  m_FloatValues:
+    ad32d6f21c8464a4285b386ead60be19: 1.7477665
+    dc61a613603ec426291b607d4778d7a6: 0.04171297
+    465e0c338372243798d8385269028beb: -8.362404
+    9e774cc53e0f74875a9ecbcca8ae23a3: 20
+    3ea0314c6faf44042b2f617f156e321f: -19.928473
+    4568255e2ad4e4d7288373ed102e6f37: 4.648096
+  m_TransitionOverrides: {}
