@@ -619,6 +619,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invertY: {fileID: 752268406}
+  audioMixer: {fileID: 24100000, guid: 41ea7a18916464824abc5af4e5fd74ff, type: 2}
+  bgmSlider: {fileID: 1930851421}
 --- !u!1 &471356259
 GameObject:
   m_ObjectHideFlags: 0
